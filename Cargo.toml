@@ -1,0 +1,20 @@
+[package]
+name = "pyhello"
+version = "0.1.0"
+build = "build.rs"
+authors = ["Brendan Molloy <brendan@bbqsrc.net>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# jemallocator-global = { version = "0.3", optional = true }
+pyembed = { version = "0.9.0", default-features = false }
+
+[features]
+default = ["build-mode-pyoxidizer-exe"]
+# jemalloc = ["jemallocator-global", "pyembed/jemalloc"]
+build-mode-pyoxidizer-exe = ["pyembed/build-mode-pyoxidizer-exe"]
+# build-mode-prebuilt-artifacts = ["pyembed/build-mode-prebuilt-artifacts"]
+# cpython-link-unresolved-static = ["pyembed/cpython-link-unresolved-static"]
+# cpython-link-default = ["pyembed/cpython-link-default"]
